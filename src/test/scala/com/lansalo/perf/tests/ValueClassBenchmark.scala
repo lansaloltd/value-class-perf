@@ -33,7 +33,7 @@ object ValueClassBenchmark extends Bench.OfflineReport {
   performance of "items" in {
     measure method "totalPerformanceA" in {
       using(items) in {
-        r => totalPerformanceA(r)
+        r => totalPerformanceBase(r)
       }
     }
   }
@@ -41,7 +41,7 @@ object ValueClassBenchmark extends Bench.OfflineReport {
   performance of "badItems" in {
     measure method "totalPerformanceB" in {
       using(badItems) in {
-        r => totalPerformanceB(r)
+        r => totalPerformanceBad(r)
       }
     }
   }
@@ -49,7 +49,7 @@ object ValueClassBenchmark extends Bench.OfflineReport {
   performance of "goodItems" in {
     measure method "totalPerformanceC" in {
       using(goodItems) in {
-        r => totalPerformanceC(r)
+        r => totalPerformanceGood(r)
       }
     }
   }

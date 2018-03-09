@@ -3,7 +3,7 @@ package com.lansalo.perf.tests
 import java.io.File
 
 import com.lansalo.perf.domain.valueclasses._
-import com.lansalo.perf.targets.valueclasses.{instantiateA, instantiateB, instantiateC}
+import com.lansalo.perf.targets.valueclasses.{instantiateBase, instantiateBad, instantiateC}
 import com.lansalo.perf.tests.ValueClassBenchmark.using
 import org.scalameter.Measurer
 import org.scalameter.api.{Bench, Gen}
@@ -25,7 +25,7 @@ object ValueClassMemoryBenchmark extends Bench.OfflineReport {
   performance of "numberOfItems" in {
     measure method "instantiateA" in {
       using(numberOfItems) in {
-        r => instantiateA(r)
+        r => instantiateBase(r)
       }
     }
   }
@@ -33,7 +33,7 @@ object ValueClassMemoryBenchmark extends Bench.OfflineReport {
   performance of "numberOfItems" in {
     measure method "instantiateB" in {
       using(numberOfItems) in {
-        r => instantiateB(r)
+        r => instantiateBad(r)
       }
     }
   }

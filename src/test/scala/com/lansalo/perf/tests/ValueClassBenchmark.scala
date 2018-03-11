@@ -31,7 +31,7 @@ object ValueClassBenchmark extends Bench.OfflineReport {
   } yield (0 until size).toList.map(n => ItemGood(n, PriceVal(n), PriceVal(n + 1.0)))
 
   performance of "items" in {
-    measure method "totalPerformanceA" in {
+    measure method "totalPerformanceBase" in {
       using(items) in {
         r => totalPerformanceBase(r)
       }
@@ -39,7 +39,7 @@ object ValueClassBenchmark extends Bench.OfflineReport {
   }
 
   performance of "badItems" in {
-    measure method "totalPerformanceB" in {
+    measure method "totalPerformanceBad" in {
       using(badItems) in {
         r => totalPerformanceBad(r)
       }
@@ -47,7 +47,7 @@ object ValueClassBenchmark extends Bench.OfflineReport {
   }
 
   performance of "goodItems" in {
-    measure method "totalPerformanceC" in {
+    measure method "totalPerformanceGood" in {
       using(goodItems) in {
         r => totalPerformanceGood(r)
       }

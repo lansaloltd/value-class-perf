@@ -5,15 +5,15 @@ import com.lansalo.perf.domain.valueclasses._
 package object valueclasses {
 
   def totalPerformanceBase(list: List[Item]): Double = {
-    list.foldLeft(0d)((acc, item) => {item.soldPrice - item.asked})
+    list.foldLeft(0d)((acc, item) => {acc + (item.soldPrice - item.asked)})
   }
 
   def totalPerformanceBad(list: List[ItemBad]): Double = {
-    list.foldLeft(0d)((acc, item) => { item.soldPrice.price - item.asked.price })
+    list.foldLeft(0d)((acc, item) => {acc + (item.soldPrice.price - item.asked.price )})
   }
 
   def totalPerformanceGood(list: List[ItemGood]): PriceVal = {
-    list.foldLeft(PriceVal(0d))((acc, item) => { item.soldPrice - item.asked })
+    list.foldLeft(PriceVal(0d))((acc, item) => {acc + (item.soldPrice - item.asked)})
   }
 
   def instantiateBase(list: List[Int]): List[Item] = {

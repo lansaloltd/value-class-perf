@@ -4,7 +4,7 @@ package object valueclasses {
 
   final case class Price(price: Double)
 
-  case class PriceVal(price: Double) extends AnyVal {
+  final case class PriceVal(price: Double) extends AnyVal {
     def -(that: PriceVal) = PriceVal(this.price - that.price)
     def +(that: PriceVal) = PriceVal(this.price + that.price)
   }
